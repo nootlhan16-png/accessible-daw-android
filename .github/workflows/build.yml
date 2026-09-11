@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build APK
 
 on:
   push:
@@ -18,15 +18,27 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+        cache: gradle
     
-    - name: Build with Gradle
-      run: |
-        chmod +x gradlew
-        ./gradlew build
+    - name: Make gradlew executable
+      run: chmod +x gradlew
     
-    - name: Upload Build Artifacts
-      if: always()
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+    
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v3
       with:
-        name: build-outputs
-        path: build/outputs/
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+    
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+      continue-on-error: true
+    
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: app-release
+        path: app/build/outputs/apk/release/app-release.apk

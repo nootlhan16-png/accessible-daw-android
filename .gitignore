@@ -1,0 +1,27 @@
+# Gradle files
+.gradle/
+build/
+*.apk
+*.ap_
+*.aab
+
+# Android files
+*.dex
+*.class
+.DS_Store
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Build outputs
+*.jar
+*.aar

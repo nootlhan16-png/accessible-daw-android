@@ -4,11 +4,14 @@ build/
 *.apk
 *.ap_
 *.aab
+*.zip
+*.jks
 
 # Android files
 *.dex
 *.class
 .DS_Store
+local.properties
 
 # IDE files
 .idea/
@@ -17,6 +20,7 @@ build/
 *.ipr
 *.swp
 *.swo
+.vscode/
 
 # OS files
 Thumbs.db
@@ -25,3 +29,4 @@ Thumbs.db
 # Build outputs
 *.jar
 *.aar
+*.war

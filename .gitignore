@@ -30,3 +30,6 @@ Thumbs.db
 *.jar
 *.aar
 *.war
+
+# gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
